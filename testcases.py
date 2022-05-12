@@ -34,6 +34,7 @@ COLORS = {0: "Red", 1: "Blue"}
     
 def plot(title, xs, ys, predys, mapping=CATMAP):
     markers = dict(zip(set(ys), ["+", "_", "*", "^", "s", "D"]))
+    print('markers:', markers)
     x1s = {}
     x2s = {}
     colors = {}
@@ -41,8 +42,9 @@ def plot(title, xs, ys, predys, mapping=CATMAP):
         x1s[m] = []
         x2s[m] = []
         colors[m] = []
+    print('markers:', markers)
     for x,y,py in zip(xs,ys,predys):
-        
+        print('x:', x)
         x1s[y].append(mapping[x[0]]+random.gauss(0,0.05))
         x2s[y].append(mapping[x[1]]+random.gauss(0,0.05))
         colors[y].append(COLORS[py])
